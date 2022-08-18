@@ -1,0 +1,198 @@
+#### RELIGIOUS ####
+
+cathedral_building_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+
+	desc = cathedral_building_decision_desc
+	selection_tooltip = cathedral_building_decision_tooltip
+
+	is_shown = {
+		has_trait = cathedral
+		has_character_flag = glass_dream
+		is_landed = yes
+		exists = capital_province
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:cathedral_building_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= 2
+	}
+
+	is_valid_showing_failures_only = {
+		is_ruler = yes
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = builder
+		root.cp:councillor_court_chaplain = {
+			save_scope_as = court_chaplain
+		}
+		show_as_tooltip = { cathedral_building_decision_effect = yes }
+
+		trigger_event = cathedral_decisions.3001
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = cathedral_decisions.3002
+		}
+		#Can only happen once
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:cathedral_building_decision
+		}
+	}
+
+	cost = {
+		gold = 1000
+		prestige = 1000
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+mosque_building_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+
+	desc = mosque_building_decision_desc
+	selection_tooltip = cathedral_building_decision_tooltip
+
+	is_shown = {
+		has_trait = mosque
+		has_character_flag = glass_dream
+		is_landed = yes
+		exists = capital_province
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:cathedral_building_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= 2
+	}
+
+	is_valid_showing_failures_only = {
+		is_ruler = yes
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = builder
+		root.cp:councillor_court_chaplain = {
+			save_scope_as = court_chaplain
+		}
+		show_as_tooltip = { mosque_building_decision_effect = yes }
+
+		trigger_event = major_decisions.3001
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = major_decisions.3002
+		}
+		#Can only happen once
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:mosque_building_decision
+		}
+	}
+
+	cost = {
+		gold = 1000
+		prestige = 1000
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+synnagogue_building_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+
+	desc = synnagogue_building_decision_desc
+	selection_tooltip = cathedral_building_decision_tooltip
+
+	is_shown = {
+		has_character_flag = glass_dream
+		is_landed = yes
+		exists = capital_province
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:cathedral_building_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= 2
+	}
+
+	is_valid_showing_failures_only = {
+		is_ruler = yes
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = builder
+		root.cp:councillor_court_chaplain = {
+			save_scope_as = court_chaplain
+		}
+		show_as_tooltip = { synnagogue_building_decision_effect = yes }
+
+		trigger_event = major_decisions.3001
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = major_decisions.3002
+		}
+		#Can only happen once
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:synnagogue_building_decision
+		}
+	}
+
+	cost = {
+		gold = 1000
+		prestige = 1000
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
